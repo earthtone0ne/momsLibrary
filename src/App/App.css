@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 12vh 1fr 5vh;
+  grid-template-columns: 20vw 2fr;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 5vh;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+article {
+  grid-row: 2/-1;
+  grid-column: 2/-1;
+  min-width: 300px;
+}

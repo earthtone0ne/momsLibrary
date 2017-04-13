@@ -1,0 +1,25 @@
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  text-align: left;
+  border: 1px solid lightblue;
+  grid-gap: 0.25em 1em;
+}
+
+.item .label {
+  grid-column: 1/2;
+}
+
+.item .data {
+  grid-column: 2/3;
+}
+
+.item-movie {
+  background-color: #f4feea;
+}
+
+.item-book {
+  background-color: #fff9f8;
+}

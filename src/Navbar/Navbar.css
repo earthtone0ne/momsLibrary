@@ -1,0 +1,15 @@
+.App-header {
+  background-color: #555;
+  padding: 1vh;
+  color: #fffafc;
+  grid-column: span 2;
+}
+
+.App-header h2 {
+  font-size: 2.5vh;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
