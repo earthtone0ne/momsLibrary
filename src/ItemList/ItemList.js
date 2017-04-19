@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import Item from '../Item/Item'
-// import './ItemList.css';
+import './ItemList.css';
+import bookIcon from '../assets/open-book.svg';
+import movieIcon from '../assets/film-reel.svg';
+import globeIcon from '../assets/internet.svg';
 
 class ItemList extends Component {
   constructor () {
@@ -12,27 +15,34 @@ class ItemList extends Component {
     };
   }
 
-  handleFilter(event) {
-    const filterTerm = event.target.dataset.filter;
+  handleFilter(e) {
+    e.stopPropagation();
+    const filterTerm = e.target.dataset.filter || e.target.parentNode.dataset.filter;
     let result;
     if (filterTerm === 'all') {
       result = this.coll.slice(0);
     }
     else {
       result = this.coll.filter(
-        (item) => item.format.indexOf(filterTerm) > -1)
+        (item) => item.format.includes(filterTerm))
       }
     this.setState({filteredItems: result});
   }
 
-  //add better key to items when ID is generated. Using date as placeholder
+  //TODO: add better key to items when ID is generated. Using date as placeholder
   render() {
     return (
       <div>
-        <div className="filter-items">
-          <button data-filter="book" onClick={(e)=>this.handleFilter(e)}>Books</button>
-          <button data-filter="movie" onClick={(e)=>this.handleFilter(e)}>Movies</button>
-          <button data-filter="all" onClick={(e)=>this.handleFilter(e)}>All</button>
+        <div className="filter-items" onClick={(e)=>this.handleFilter(e)}>
+          <button data-filter="book">
+            <img src={bookIcon} alt="book"/>
+            Books</button>
+          <button data-filter="movie">
+            <img src={movieIcon} alt="movie"/>
+            Movies</button>
+          <button data-filter="all">
+            <img src={globeIcon} alt="everything"/>
+            View All</button>
         </div>
         <div className="item-list">
           {this.state.filteredItems.map((item)=> <Item item={item} key={item.readDate}/>)}

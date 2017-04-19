@@ -11,10 +11,10 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <Menu />
-        <Footer />
         <article>
           <ItemList />
         </article>
+        <Footer />
       </div>
     );
   }
