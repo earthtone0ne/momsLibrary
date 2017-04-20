@@ -2,11 +2,12 @@ div.App {
   text-align: center;
   display: grid;
   height: 100vh;
-  grid-template-rows: 12vh 1fr 5vh;
+  grid-template-rows: 12vh 83vh 5vh;
   grid-template-columns: 20vw 2fr;
 }
 
 article {
   grid-row: 2/-2;
   grid-column: 2/3;
+  overflow: scroll;
 }

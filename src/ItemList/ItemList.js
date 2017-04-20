@@ -1,13 +1,16 @@
 import React, {Component} from 'react';
 import Item from '../Item/Item'
+import NewItem from '../NewItem/NewItem'
 import './ItemList.css';
 import bookIcon from '../assets/open-book.svg';
 import movieIcon from '../assets/film-reel.svg';
 import globeIcon from '../assets/internet.svg';
 
+
 class ItemList extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props);
+    //TODO: move collection state to App
     this.coll = JSON.parse(localStorage.getItem('mediaCollection'));
     this.handleFilter = this.handleFilter.bind(this);
     this.state = {
@@ -18,6 +21,8 @@ class ItemList extends Component {
   handleFilter(e) {
     e.stopPropagation();
     const filterTerm = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    // return if target was not a button
+    if (!filterTerm) {return;}
     let result;
     if (filterTerm === 'all') {
       result = this.coll.slice(0);
@@ -33,6 +38,10 @@ class ItemList extends Component {
   render() {
     return (
       <div>
+        <NewItem
+          allItems={this.state.coll}
+          addMediaItem={this.props.addMediaItem}
+          />
         <div className="filter-items" onClick={(e)=>this.handleFilter(e)}>
           <button data-filter="book">
             <img src={bookIcon} alt="book"/>
