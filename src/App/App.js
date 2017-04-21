@@ -10,17 +10,25 @@ class App extends Component {
     super();
     this.addMediaItem = this.addMediaItem.bind(this);
     this.removeMediaItem = this.removeMediaItem.bind(this);
+    const allMedia = JSON.parse(localStorage.getItem('mediaCollection'));
+    this.state = {
+      allMedia
+    }
   }
 
   addMediaItem(item) {
-    const mediaCollection = JSON.parse(localStorage.getItem('mediaCollection'));
-    mediaCollection.push(item);
-    localStorage.setItem('mediaCollection', JSON.stringify(mediaCollection))
-    console.log('added\n', item)
+    const media = JSON.parse(localStorage.getItem('mediaCollection'));
+    media.push(item);
+    localStorage.setItem('mediaCollection', JSON.stringify(media))
+    this.setState({allMedia: media})
   }
 
-  removeMediaItem(item) {
-    console.log('removed\n', item)
+  removeMediaItem(key) {
+    const media = JSON.parse(localStorage.getItem('mediaCollection'));
+    const filteredMedia = media.filter((elem)=> elem.readDate !== key);
+    console.log(key, "###", media, "###",filteredMedia)
+    localStorage.setItem('mediaCollection', JSON.stringify(filteredMedia))
+    this.setState({allMedia: filteredMedia})
   }
 
   render() {
@@ -30,6 +38,7 @@ class App extends Component {
         <Menu />
         <article>
           <ItemList
+            allMedia={this.state.allMedia}
             addMediaItem={this.addMediaItem}
             removeMediaItem={this.removeMediaItem} />
         </article>
