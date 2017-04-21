@@ -19,8 +19,16 @@ class App extends Component {
     console.log('added\n', item)
   }
 
+<<<<<<< Updated upstream
   removeMediaItem(item) {
     console.log('removed\n', item)
+=======
+  removeMediaItem(key) {
+    const media = JSON.parse(localStorage.getItem('mediaCollection'));
+    const filteredMedia = media.filter((elem)=> elem.readDate !== key);
+    localStorage.setItem('mediaCollection', JSON.stringify(filteredMedia))
+    this.setState({allMedia: filteredMedia})
+>>>>>>> Stashed changes
   }
 
   render() {
