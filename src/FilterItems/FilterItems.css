@@ -1,0 +1,8 @@
+
+.item-add input, .item-add select {
+  font-size: 15px;
+}
+
+.item-add input[type="date"] {
+  color: #999;
+}
