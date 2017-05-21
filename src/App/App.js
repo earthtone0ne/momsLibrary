@@ -29,7 +29,7 @@ class App extends Component {
     localStorage.setItem('mediaCollection', JSON.stringify(filteredMedia))
     this.setState({allMedia: filteredMedia})
   }
-
+  
   render() {
     return (
       <div className="App">

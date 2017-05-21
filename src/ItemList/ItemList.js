@@ -6,24 +6,25 @@ import bookIcon from '../assets/open-book.svg';
 import movieIcon from '../assets/film-reel.svg';
 import globeIcon from '../assets/internet.svg';
 
-
+//TODO: move filter to parent state
 class ItemList extends Component {
   constructor (props) {
     super(props);
-    this.handleFilter = this.handleFilter.bind(this);
+    this.handleFormatFilter = this.handleFormatFilter.bind(this);
     this.state = {
-      formatFilter: 'all'
+      formatFilter: 'all',
+      textFilter: '';
     };
   }
 
-  handleFilter(e) {
+  handleFormatFilter(e) {
     e.stopPropagation();
     const formatFilter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
     // return if target was not a button
     if (!formatFilter) {return;}
     this.setState({formatFilter})
   }
-  filterList(item){
+  filterByFormat(item){
     if(this.state.formatFilter === 'all' || item.format === this.state.formatFilter) {
       return (
         <Item item={item} key={item.readDate}
@@ -39,7 +40,7 @@ class ItemList extends Component {
           allItems={this.props.allMedia}
           addMediaItem={this.props.addMediaItem}
           />
-        <div className="filter-items" onClick={(e)=>this.handleFilter(e)}>
+        <div className="filter-items" onClick={(e)=>this.handleFormatFilter(e)}>
           <button data-filter="book">
             <img src={bookIcon} alt="book"/>
             Books</button>
@@ -51,7 +52,7 @@ class ItemList extends Component {
             View All</button>
         </div>
         <div className="item-list">
-          {this.props.allMedia.map((item)=>this.filterList(item))}
+          {this.props.allMedia.map((item)=>this.filterByFormat(item))}
         </div>
       </div>
     )
