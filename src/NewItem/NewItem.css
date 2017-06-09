@@ -1,8 +1,59 @@
 
-.item-add input, .item-add select {
+.item-add > input, .item-add button {
   font-size: 15px;
+  width: 85%;
+  margin: 2px;
+  box-sizing: border-box;
+  padding: 2px;
+  border-radius: 0px;
 }
 
-.item-add input[type="date"] {
+.item-add input:hover, .item-add select:hover {
+  color: black;
+  border: 2px solid grey;
+}
+
+div.item-add-select {
+  height: 26px;
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+  width: 85%;
+  display: flex;
+  grid-row: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-add-select select {
+  flex-grow: 1;
+  height: inherit;
+  font-size: 14px;
+}
+
+.item-add-select img {
+  display: inline-block;
+  height: 19px;
+  margin: 4px 3px 4px 0px;
+  background-color: whitesmoke;
+  border: 3px solid whitesmoke;
+  border-radius: 4px;
+}
+
+.new-item-date {
+  width: 85%;
+  margin: 2px;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.new-item-date label {
+  display: inline-block;
+  font-size: 13px;
+  padding: 2px;
+}
+
+#new-item-date {
   color: #999;
+  flex-grow: 1;
 }

@@ -10,6 +10,5 @@ li {
 #main-menu {
   background-color: lightblue;
   color: #444;
-  grid-column: 1/2;
-  grid-row: 2;
+  
 }

@@ -34,11 +34,10 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <Menu />
+        <Menu addMediaItem={this.addMediaItem} />
         <article>
           <ItemList
             allMedia={this.state.allMedia}
-            addMediaItem={this.addMediaItem}
             removeMediaItem={this.removeMediaItem} />
         </article>
         <Footer />

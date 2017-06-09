@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import Item from '../Item/Item'
-import NewItem from '../NewItem/NewItem'
+import Item from '../Item/Item';
 import './ItemList.css';
 import bookIcon from '../assets/open-book.svg';
 import movieIcon from '../assets/film-reel.svg';
@@ -10,13 +9,14 @@ import globeIcon from '../assets/internet.svg';
 class ItemList extends Component {
   constructor (props) {
     super(props);
-    this.handleFilter = this.handleFilter.bind(this);
+    this.handleFormatFilter = this.handleFormatFilter.bind(this);
     this.state = {
-      formatFilter: 'all'
+      formatFilter: 'all',
+      textFilter: ''
     };
   }
 
-  handleFilter(e) {
+  handleFormatFilter(e) {
     e.stopPropagation();
     const formatFilter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
     // return if target was not a button
@@ -35,11 +35,7 @@ class ItemList extends Component {
   render() {
     return (
       <div>
-        <NewItem
-          allItems={this.props.allMedia}
-          addMediaItem={this.props.addMediaItem}
-          />
-        <div className="filter-items" onClick={(e)=>this.handleFilter(e)}>
+        <div className="filter-items" onClick={(e)=>this.handleFormatFilter(e)}>
           <button data-filter="book">
             <img src={bookIcon} alt="book"/>
             Books</button>
