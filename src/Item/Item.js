@@ -10,7 +10,7 @@ class Item extends Component {
     this.confirmDelete = this.confirmDelete.bind(this);
   }
   confirmDelete() {
-    const conf = confirm(`Really delete ${this.props.item.title}?`)
+    const conf = confirm(`Really delete the ${this.props.item.format} "${this.props.item.title}"?`)
     if (conf) {
       this.removeMediaItem(this.props.item.readDate);
     }

@@ -7,7 +7,7 @@ What if she didn't need to print and carry all that data?
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-Movie and Open Book icons made by [Freepik](http://www.freepik.com/) from [www.flaticon.com](http://www.flaticon.com)
-Film Strip icon made by [Vectors Market](http://www.vectorsmarket.com/) from [www.flaticon.com](http://www.flaticon.com)
-Books icon made by [Madebyoliver](http://www.flaticon.com/authors/madebyoliver) from [www.flaticon.com](http://www.flaticon.com)
-Internet/Globe icon made by [FlatIcons](http://www.flaticon.com) from [www.flaticon.com](http://www.flaticon.com)
+Movie and Open Book icons made by [Freepik](http://www.freepik.com/) from[www.flaticon.com](http://www.flaticon.com)  
+Film Strip icon made by [Vectors Market](http://www.vectorsmarket.com/) from[www.flaticon.com](http://www.flaticon.com)  
+Books icon made by [Madebyoliver](http://www.flaticon.com/authors/madebyoliver) from[www.flaticon.com](http://www.flaticon.com)  
+Internet/Globe icon made by [FlatIcons](http://www.flaticon.com) from[www.flaticon.com](http://www.flaticon.com)

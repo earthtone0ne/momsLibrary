@@ -1,5 +1,5 @@
 const localStorageMock = (function() {
-  var storage = {};
+  let storage = {};
 
   return {
     setItem: function(key, value) {
