@@ -19,8 +19,9 @@ class App extends Component {
   addMediaItem(item) {
     const media = JSON.parse(localStorage.getItem('mediaCollection'));
     media.push(item);
-    localStorage.setItem('mediaCollection', JSON.stringify(media))
-    this.setState({allMedia: media})
+    localStorage.setItem('mediaCollection', JSON.stringify(media));
+    this.setState({allMedia: media});
+    document.getElementById('item-add-form').reset();
   }
 
   removeMediaItem(key) {

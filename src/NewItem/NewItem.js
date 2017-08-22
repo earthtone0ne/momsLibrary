@@ -42,7 +42,7 @@ class NewItem extends Component {
   }
   render() {
     return (
-      <form className="item-add" onSubmit={(e)=>this.createItem(e)}>
+      <form className="item-add" id="item-add-form" onSubmit={(e)=>this.createItem(e)}>
         <h2>Quick Add</h2>
         <div className="item-add-select">
           {this.showIcon()}
